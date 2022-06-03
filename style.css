@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+header {
+    background: linear-gradient(#13181d, #20212e, #341b47);
+}
+
+header nav {
+    padding: 30px 5% 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav h1 {
+    margin: 0;
+    text-transform: uppercase;
+    color: #d33bfd;
+}
+
+header nav .right {
+    display: flex;
+    align-items: center;
+}
+
+header nav .right p {
+    margin: 0 15px 0 0;
+    color: #ccc;
+    cursor: pointer;
+}
+
+header nav .right p:hover {
+    color: white;
+}
+
+header nav .right button {
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: inherit;
+    border: 1px solid #d33bfd;
+    color: #d33bfd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+header nav .right button:hover {
+    color: inherit;
+    background-color: #d33bfd;
+}
+
+.presentation {
+    padding: 30px 5%;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.presentation .product-presentation {
+    width: 130%;
+    flex-shrink: 3;
+}
+
+.presentation .product-presentation h1 {
+    margin: 0;
+    font-size: 4vw;
+    width: 80%;
+}
+
+.presentation .product-presentation p {
+    align-items: center;
+    font-weight: 300;
+    color: #e9e9e9;
+}
+
+.presentation .product-presentation button {
+    margin-top: 20px;
+    padding: 15px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/*animation*/
+
+.presentation .image-presentation .container img {
+    width: 500px;
+    margin-left: -500px;
+    margin-top: -60px;
+}
+
+.presentation .image-presentation .container .back {
+    position: absolute;
+    transform:perspective(1000px) rotateY(180deg);
+    transition: transform 0.5s linear 0s;
+    backface-visibility: hidden;
+}
+
+.presentation .image-presentation .container .front{
+    position: absolute;
+    transition: transform 0.5s linear 0s;
+    backface-visibility: hidden;
+    transform:perspective(1000px) rotateY(0deg);
+}
+
+.presentation .image-presentation .container:hover .front {
+    transform:perspective(1000px) rotateY(-180deg);
+}
+
+.presentation .image-presentation .container:hover .back {
+    transform:perspective(1000px) rotateY(0deg);
+}
+
+/*animation*/
+
+.first .product-presentation button {
+    background-color: #d33bfd;
+    border: 1px solid #d33bfd;
+    color: white;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.first .product-presentation button:hover {
+    background-color: inherit;
+    color: #d33bfd;
+}
+
+.first .product-presentation .small-images {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.first .product-presentation .small-images .small {
+    padding: 20px;
+    background-color: #33314d;
+    margin: 0 15px 15px 0;
+    border-radius: 20px;
+    transition: filter 0.5s;
+}
+
+.first .product-presentation .small-images .small:hover {
+    filter: brightness(50%);
+}
+
+.first .product-presentation .small-images .small img {
+    width: 180px;
+}
+
+.second {
+    margin: 0;
+    background-color: #13181d;
+}
+
+.second .product-presentation .new {
+    color: #d33bfd;
+}
+
+.second .product-presentation button {
+    background-color: inherit;
+    border: 1px solid #d33bfd;
+    color: #d33bfd;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.second .product-presentation button:hover {
+    background-color: #d33bfd;
+    color: white;
+}
+
+footer {
+    margin: 0;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer h3 {
+    color: #d33bfd;
+}
+
+footer p {
+    cursor: pointer;
+    color: #ccc;
+}
+
+footer p:hover{
+    color: white;
+}
+
+@media screen and (max-width: 640px) {
+    header nav .right p {
+        display: none;
+    }
+    
+
+    .presentation .product-presentation h1 {
+        font-size: 2em;
+    }
+
+    .presentation .image-presentation {
+        display: none;
+    }
+
+    .first .product-presentation .small-images .small img {
+        width: 90px;
+    }
+
+    footer {
+        justify-content: flex-start;
+    }
+
+    footer .column {
+        width: 80%;
+    }
+}
